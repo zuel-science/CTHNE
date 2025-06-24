@@ -12,11 +12,11 @@ from torch_geometric.utils import add_remaining_self_loops
 
 
 def set_random_seed(seed=0):
-    random.seed(seed)  # python
-    np.random.seed(seed)  # numpy
-    torch.manual_seed(seed)  # pytorch
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
     if torch.cuda.is_available():
-        torch.cuda.manual_seed(seed)  # pytorch-cuda
+        torch.cuda.manual_seed(seed)
 
 
 def get_date_postfix():

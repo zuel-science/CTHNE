@@ -78,7 +78,7 @@ class CTHNE(nn.Module):
                  moving_average_decay: float = 0.2):
         super(CTHNE, self).__init__()
 
-        self.loss_weights = nn.Parameter(torch.ones(4), requires_grad=True)  # Learnable weights
+        self.loss_weights = nn.Parameter(torch.ones(4), requires_grad=True)
         self.online_encoder = encoder
         self.target_encoder1 = copy.deepcopy(self.online_encoder)
         self.target_encoder2 = copy.deepcopy(self.online_encoder)
@@ -270,5 +270,3 @@ class CTHNE(nn.Module):
         loss = (pos_loss + neg_loss) * 0.5
 
         return loss
-
-
